@@ -279,11 +279,14 @@ header {
   .modal_pledge_radio {
     @include displayFlex(column, flex-start, flex-start);
     .radio_section {
-      border: 1px solid $dark-gary-disabled;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 40px;
-      @include displayFlex(row, flex-start, flex-start);
+      @include displayFlex(column, flex-start, center);
+      .radio {
+        border: 1px solid $dark-gary-disabled;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 40px;
+        @include displayFlex(row, flex-start, flex-start);
+      }
       input[type="radio"]:after {
         width: 15px;
         height: 15px;
@@ -375,40 +378,44 @@ header {
       }
     }
   }
-  .modal_pledge_menu {
+  .radio_menu {
     @include widthHeight(100%, auto);
-    padding: 20px;
     @include displayFlex(row, space-between, center);
-    .modal_text {
-      color: $drak-gray;
-    }
-    &_amount {
-      position: relative;
-      i {
-        position: absolute;
-        left: 15px;
-        top: 23px;
+    .modal_pledge_menu {
+      @include widthHeight(100%, auto);
+      padding: 0px 20px 20px 20px;
+      @include displayFlex(row, space-between, center);
+      .modal_text {
         color: $drak-gray;
       }
-      .pledge_amount {
-        @include widthHeight(100px, 60px);
-        border-radius: 50px;
-        outline: none;
-        border: 2px solid $primary-cyan-one;
-        padding-left: 40px;
-      }
-      .pledge_continue {
-        @include widthHeight(100px, 60px);
-        border-radius: 50px;
-        outline: none;
-        border: none;
-        background-color: $primary-cyan-one;
-        color: $normal-white;
-        font-size: fontSizeSet(n-normal);
-        font-weight: fontWeightSet(l-bold);
-        cursor: pointer;
-        &:hover {
-          background-color: $primary-cyan-two;
+      &_amount {
+        position: relative;
+        i {
+          position: absolute;
+          left: 15px;
+          top: 23px;
+          color: $drak-gray;
+        }
+        .pledge_amount {
+          @include widthHeight(100px, 60px);
+          border-radius: 50px;
+          outline: none;
+          border: 2px solid $primary-cyan-one;
+          padding-left: 40px;
+        }
+        .pledge_continue {
+          @include widthHeight(100px, 60px);
+          border-radius: 50px;
+          outline: none;
+          border: none;
+          background-color: $primary-cyan-one;
+          color: $normal-white;
+          font-size: fontSizeSet(n-normal);
+          font-weight: fontWeightSet(l-bold);
+          cursor: pointer;
+          &:hover {
+            background-color: $primary-cyan-two;
+          }
         }
       }
     }

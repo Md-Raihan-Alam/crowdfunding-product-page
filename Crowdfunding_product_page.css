@@ -486,6 +486,22 @@ header {
 }
 
 .modal .modal_pledge_radio .radio_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal .modal_pledge_radio .radio_section .radio {
   border: 1px solid rgba(122, 122, 122, 0.281);
   border-radius: 10px;
   padding: 20px;
@@ -635,10 +651,9 @@ header {
   color: rgba(122, 122, 122, 0.281) !important;
 }
 
-.modal .modal_pledge_menu {
+.modal .radio_menu {
   width: 100%;
   height: auto;
-  padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -654,22 +669,41 @@ header {
           align-items: center;
 }
 
-.modal .modal_pledge_menu .modal_text {
+.modal .radio_menu .modal_pledge_menu {
+  width: 100%;
+  height: auto;
+  padding: 0px 20px 20px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal .radio_menu .modal_pledge_menu .modal_text {
   color: #7a7a7a;
 }
 
-.modal .modal_pledge_menu_amount {
+.modal .radio_menu .modal_pledge_menu_amount {
   position: relative;
 }
 
-.modal .modal_pledge_menu_amount i {
+.modal .radio_menu .modal_pledge_menu_amount i {
   position: absolute;
   left: 15px;
   top: 23px;
   color: #7a7a7a;
 }
 
-.modal .modal_pledge_menu_amount .pledge_amount {
+.modal .radio_menu .modal_pledge_menu_amount .pledge_amount {
   width: 100px;
   height: 60px;
   border-radius: 50px;
@@ -678,7 +712,7 @@ header {
   padding-left: 40px;
 }
 
-.modal .modal_pledge_menu_amount .pledge_continue {
+.modal .radio_menu .modal_pledge_menu_amount .pledge_continue {
   width: 100px;
   height: 60px;
   border-radius: 50px;
@@ -691,7 +725,7 @@ header {
   cursor: pointer;
 }
 
-.modal .modal_pledge_menu_amount .pledge_continue:hover {
+.modal .radio_menu .modal_pledge_menu_amount .pledge_continue:hover {
   background-color: #147b74;
 }
 

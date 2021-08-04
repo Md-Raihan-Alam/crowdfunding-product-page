@@ -126,6 +126,7 @@ function markerUpdate(){
 modalPledge.map((data)=>{
     menuNode.innerHTML+=`
      <div class="radio_section ${data.id}">
+            <div class="radio">
               <input type="radio" name="modal_pledge_radio" id="radio">
               <div class="radio_section_info">
                 <div class="radio_text">
@@ -139,7 +140,8 @@ modalPledge.map((data)=>{
                 </div>
               </div>
             </div>
-        <div class="radio_menu"></div>
+              <div class="radio_menu"></div>
+            </div>
     `;
 });
 modalShutterBtn.addEventListener('click',function(){
@@ -152,18 +154,21 @@ document.querySelector('.four input[type="radio"]').setAttribute('disabled','tru
 const radioSelectors=document.querySelectorAll('.radio_section input[type="radio"]');
 radioSelectors.forEach((e)=>{
     e.addEventListener('click',(e2)=>{
-        let classes=e2.target.parentElement.classList;
-        let classesPart=document.querySelector(`.${classes[1]}`);
-        console.log(classesPart);
-        console.log(classes[1]);
-        // classesPart=`<div class="modal_pledge_menu">
-        //       <div class="modal_text">
-        //         Enter your pledge
-        //       </div>
-        //       <div class="modal_pledge_menu_amount">
-        //         <i class="fas fa-dollar-sign"></i><input type="text" class="pledge_amount">
-        //         <button class="pledge_continue">Conitnue</button>
-        //       </div>
-        //     </div>`;
+        let allClassesDom=e.parentElement.parentElement.parentElement.classList[0];
+        let classDom=e2.target.parentElement.parentElement.classList;
+        let classPart=document.querySelector(`.${classDom[1]} .radio_menu`);
+        let allClassesDomPart=document.querySelectorAll(`.${allClassesDom} .radio_menu`);
+        allClassesDomPart.forEach((e)=>{
+            e.innerHTML=``;
+        });
+        classPart.innerHTML=`<div class="modal_pledge_menu">
+              <div class="modal_text">
+                Enter your pledge
+              </div>
+              <div class="modal_pledge_menu_amount">
+                <i class="fas fa-dollar-sign"></i><input type="text" class="pledge_amount">
+                <button class="pledge_continue">Conitnue</button>
+              </div>
+            </div>`;
     });
 });
