@@ -1,0 +1,36 @@
+$normal-white: hsl(0, 0, 100%);
+$primary-cyan-one: hsl(176, 50%, 47%);
+$primary-cyan-one-disabled: hsla(176, 50%, 47%, 0.479);
+$primary-cyan-two: hsl(176, 72%, 28%);
+$normal-black: hsl(0, 0%, 0%);
+$drak-gray: hsl(0, 0%, 48%);
+$dark-gary-disabled: hsla(0, 0%, 48%, 0.281);
+$drak-gray-two: hsl(0, 8%, 91%);
+$fontWeight: (
+  "l-light": lighter,
+  "n-normal": 500,
+  "l-bold": 700,
+  "b-bolder": bolder,
+);
+$fontSize: (
+  "s-small": 14px,
+  "n-normal": 16px,
+  "logoSize": 20px,
+  "big": 23px,
+);
+@function fontSizeSet($font-size) {
+  @return map-get($fontSize, $font-size);
+}
+@function fontWeightSet($font-weight) {
+  @return map-get($fontWeight, $font-weight);
+}
+@mixin widthHeight($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin displayFlex($flexDirection, $justifyContent, $alignItems) {
+  display: flex;
+  flex-direction: $flexDirection;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}

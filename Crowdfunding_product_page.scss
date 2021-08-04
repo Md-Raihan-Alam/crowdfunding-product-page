@@ -1,0 +1,419 @@
+@import "info";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+body {
+  background-color: $drak-gray-two;
+}
+header {
+  @include widthHeight(100%, 250px);
+  background-image: url(images/image-hero-desktop.jpg);
+  background-size: 100% 100%;
+}
+.info {
+  @include widthHeight(80%, 80px);
+  @include displayFlex(row, space-between, center);
+  margin: 0 auto;
+  #{&}_header {
+    color: $normal-white;
+    font-size: fontSizeSet(logoSize);
+    font-weight: fontWeightSet(bold);
+  }
+  #{&}_menu .nav_link {
+    color: $normal-white;
+    margin: 0px 10px;
+  }
+}
+.upper {
+  @include widthHeight(100%, auto);
+  position: relative;
+  #{&}_info {
+    @include widthHeight(50%, auto);
+    background-color: $normal-white;
+    border-radius: 10px;
+    transform: translate(50%, -50%);
+    position: absolute;
+    & #logo {
+      position: relative;
+      top: -30px;
+      left: 340px;
+    }
+  }
+  #{&}_header {
+    margin: 20px 0px;
+    @include displayFlex(column, center, center);
+  }
+  #{&}_header_one {
+    font-size: fontSizeSet(big);
+    font-weight: fontWeightSet(b-bolder);
+  }
+  #{&}_header_two {
+    margin-top: 10px;
+    font-size: fontSizeSet(s-small);
+    color: $drak-gray;
+  }
+  #{&}_finisher {
+    padding-bottom: 50px;
+    margin-top: 20px;
+    .upper_finisher_btn {
+      @include widthHeight(70%, auto);
+      margin: 0 auto;
+      @include displayFlex(row, space-between, center);
+      .backer_btn {
+        @include widthHeight(30%, 50px);
+        border-radius: 50px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background-color: $primary-cyan-two;
+        color: $normal-white;
+        font-weight: fontWeightSet(l-bold);
+      }
+      .upper_finisher_bookmark {
+        #svg_color {
+          position: relative;
+          left: 20px;
+        }
+        @include displayFlex(row, center, center);
+        .bookmark_text {
+          color: $drak-gray;
+          font-weight: fontWeightSet(b-bolder);
+          background-color: $drak-gray-two;
+          @include widthHeight(150px, 55px);
+          border-radius: 0px 50px 50px 0px;
+          @include displayFlex(row, center, center);
+        }
+        #svg_color,
+        .bookmark_text:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+.backer {
+  @include widthHeight(100%, auto);
+  margin-top: 200px;
+  #{&}_info {
+    @include widthHeight(50%, auto);
+    padding: 30px 0px;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    background-color: $normal-white;
+    border-radius: 10px;
+    .backer_section {
+      margin-bottom: 20px;
+      @include displayFlex(row, space-evenly, center);
+      .one,
+      .two {
+        padding-right: 70px;
+        border-right: 2px solid $drak-gray-two;
+      }
+      .bf_amount {
+        font-size: fontSizeSet(big);
+        font-weight: fontWeightSet(b-bolder);
+        margin-bottom: 10px;
+      }
+      .bf_desc {
+        color: $drak-gray;
+      }
+    }
+    .progressive_section {
+      margin: 0 auto;
+      background-color: $dark-gary-disabled;
+      @include widthHeight(90%, 10px);
+      border-radius: 50px;
+      .progressive {
+        @include widthHeight(90%, inherit);
+        background-color: $primary-cyan-two;
+        border-radius: inherit;
+      }
+    }
+  }
+}
+.about {
+  @include widthHeight(100%, auto);
+  margin-top: 70px;
+  margin-bottom: 50px;
+  #{&}_info {
+    @include widthHeight(50%, auto);
+    margin: 0 auto;
+    background-color: $normal-white;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding-bottom: 20px;
+  }
+  #{&}_header {
+    padding-top: 30px;
+    padding-left: 30px;
+    font-size: fontSizeSet(logoSize);
+    font-weight: fontWeightSet(l-bold);
+  }
+  .about_desc {
+    padding: 30px;
+    text-align: justify;
+    color: $drak-gray;
+  }
+  .pledge {
+    margin: 30px;
+    &_border {
+      padding: 20px;
+      margin-bottom: 40px;
+      border: 1px solid $drak-gray-two;
+      border-radius: 10px;
+    }
+    &_offer {
+      .pledge_header {
+        @include displayFlex(row, space-between, center);
+        .pledge_hr_one,
+        .pledge_hr_two {
+          font-size: fontSizeSet(logoSize);
+          font-weight: fontWeightSet(l-bold);
+        }
+        .pledge_hr_three {
+          font-size: fontSizeSet(logoSize);
+          font-weight: fontWeightSet(l-bold);
+          color: $drak-gray;
+        }
+        .pledge_link_one,
+        .pledge_link_two {
+          color: $primary-cyan-one;
+          cursor: pointer;
+          font-weight: fontWeightSet(n-normal);
+        }
+        .pledge_link_three {
+          color: $primary-cyan-one-disabled;
+          cursor: default;
+          font-weight: fontWeightSet(n-normal);
+        }
+      }
+      .pledge_desc_one,
+      .pledge_desc_two {
+        padding-top: 20px;
+        text-align: justify;
+        color: $drak-gray;
+      }
+      .pledge_desc_three {
+        color: $dark-gary-disabled;
+      }
+      .pledge_btn_sec {
+        padding-top: 20px;
+        @include displayFlex(row, space-between, center);
+        .pledge_number_one,
+        .pledge_number_two,
+        .pledge_number_three {
+          font-size: fontSizeSet(big);
+          font-weight: fontWeightSet(b-bolder);
+          position: relative;
+          .text {
+            font-size: fontSizeSet(s-small);
+            font-weight: fontWeightSet(l-lighter);
+            color: $drak-gray;
+            position: relative;
+            bottom: 2px;
+            left: 5px;
+          }
+        }
+        .pledge_number_three {
+          color: $drak-gray;
+        }
+        .pledge_reward_one,
+        .pledge_reward_two,
+        .pledge_reward_three {
+          @include widthHeight(130px, 40px);
+          font-weight: fontWeightSet(l-bold);
+          border-radius: 50px;
+          cursor: pointer;
+          border: none;
+          outline: none;
+          background-color: $primary-cyan-one;
+          color: $normal-white;
+          &:hover {
+            background-color: $primary-cyan-two;
+          }
+        }
+        .pledge_reward_three {
+          background-color: $dark-gary-disabled;
+          cursor: default;
+          &:hover {
+            background-color: $dark-gary-disabled;
+          }
+        }
+      }
+    }
+  }
+}
+/*modal pledge*/
+.modal {
+  @include widthHeight(100%, auto);
+  position: absolute;
+  top: 100px;
+  &_pledge {
+    border-radius: 10px;
+    padding: 20px;
+    @include widthHeight(50%, auto);
+    margin: 0 auto;
+    background-color: $normal-white;
+    &_svg {
+      @include widthHeight(100%, auto);
+      @include displayFlex(row, flex-end, flex-start);
+      cursor: pointer;
+    }
+    &_start {
+      @include displayFlex(column, flex-start, flex-start);
+      &_header {
+        font-size: fontSizeSet(logoSize);
+        font-weight: fontWeightSet(l-bold);
+      }
+      &_sub_header {
+        margin: 20px 0px;
+        color: $drak-gray;
+      }
+    }
+  }
+  .modal_pledge_radio {
+    @include displayFlex(column, flex-start, flex-start);
+    .radio_section {
+      border: 1px solid $dark-gary-disabled;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 40px;
+      @include displayFlex(row, flex-start, flex-start);
+      input[type="radio"]:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: $normal-white;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid $primary-cyan-one;
+      }
+      input[type="radio"]:checked:after {
+        width: 13px;
+        height: 13px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: $primary-cyan-one;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid $primary-cyan-two;
+      }
+      .radio_section_info {
+        margin-left: 15px;
+        .radio_text {
+          padding-bottom: 10px;
+          @include displayFlex(row, space-between, flex-start);
+          &_header {
+            @include displayFlex(row, center, flex-start);
+            &_one {
+              font-size: fontSizeSet(logoSize);
+              font-weight: fontWeightSet(l-bold);
+              margin-top: -4px;
+              margin-right: 15px;
+              cursor: pointer;
+              &:hover {
+                color: $primary-cyan-one;
+              }
+            }
+            &_two {
+              margin-top: -2px;
+              color: $primary-cyan-one;
+              font-weight: fontWeightSet(l-bold);
+            }
+          }
+          .number_left {
+            font-size: fontSizeSet(n-normal);
+            font-weight: fontWeightSet(b-bolder);
+            .text {
+              font-size: fontSizeSet(s-small);
+              font-weight: fontWeightSet(l-lighter);
+              color: $drak-gray;
+              position: relative;
+              left: 5px;
+            }
+          }
+        }
+        .radio_desc {
+          color: $drak-gray;
+        }
+      }
+    }
+    .four {
+      cursor: default !important;
+      input[type="radio"] {
+        border: none;
+      }
+      input[type="radio"]:after {
+        background-color: $normal-white;
+        border: 1px solid $dark-gary-disabled;
+      }
+      .radio_text_header_one,
+      .number_left {
+        color: $drak-gray;
+        cursor: default !important;
+      }
+      .radio_text_header_one:hover {
+        color: $drak-gray !important;
+      }
+      .radio_text_header_two {
+        color: $primary-cyan-one-disabled !important;
+      }
+      .radio_desc {
+        color: $dark-gary-disabled !important;
+      }
+    }
+  }
+  .modal_pledge_menu {
+    @include widthHeight(100%, auto);
+    padding: 20px;
+    @include displayFlex(row, space-between, center);
+    .modal_text {
+      color: $drak-gray;
+    }
+    &_amount {
+      position: relative;
+      i {
+        position: absolute;
+        left: 15px;
+        top: 23px;
+        color: $drak-gray;
+      }
+      .pledge_amount {
+        @include widthHeight(100px, 60px);
+        border-radius: 50px;
+        outline: none;
+        border: 2px solid $primary-cyan-one;
+        padding-left: 40px;
+      }
+      .pledge_continue {
+        @include widthHeight(100px, 60px);
+        border-radius: 50px;
+        outline: none;
+        border: none;
+        background-color: $primary-cyan-one;
+        color: $normal-white;
+        font-size: fontSizeSet(n-normal);
+        font-weight: fontWeightSet(l-bold);
+        cursor: pointer;
+        &:hover {
+          background-color: $primary-cyan-two;
+        }
+      }
+    }
+  }
+}
+.shut {
+  display: none !important;
+}
