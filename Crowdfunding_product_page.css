@@ -633,6 +633,11 @@ header {
   border: 1px solid rgba(122, 122, 122, 0.281);
 }
 
+.modal .modal_pledge_radio .four input[type="radio"]:checked:after {
+  background-color: white;
+  border: 1px solid rgba(122, 122, 122, 0.281);
+}
+
 .modal .modal_pledge_radio .four .radio_text_header_one,
 .modal .modal_pledge_radio .four .number_left {
   color: #7a7a7a;

@@ -148,10 +148,20 @@ modalShutterBtn.addEventListener('click',function(){
     modalShutter.classList.remove('shut');
     closeBtn.addEventListener('click',function(){
         modalShutter.classList.add('shut');
+        document.querySelectorAll('.radio_menu').forEach((e)=>{
+            e.innerHTML='';
+        });
+        document.querySelectorAll('.radio_section input[type="radio"]').forEach((e)=>{
+            e.setAttribute('checked',false);
+        });
+        document.querySelectorAll('.radio_section input[type="radio"]').forEach((e)=>{
+            e.checked=false;
+        });
     });
 });
-document.querySelector('.four input[type="radio"]').setAttribute('disabled','true');
 const radioSelectors=document.querySelectorAll('.radio_section input[type="radio"]');
+const radioHeaderSelectors=document.querySelectorAll('.radio_text_header_one');
+radioSelectors[3].setAttribute('disabled',true);
 radioSelectors.forEach((e)=>{
     e.addEventListener('click',(e2)=>{
         let allClassesDom=e.parentElement.parentElement.parentElement.classList[0];
@@ -162,6 +172,32 @@ radioSelectors.forEach((e)=>{
             e.innerHTML=``;
         });
         classPart.innerHTML=`<div class="modal_pledge_menu">
+              <div class="modal_text">
+                Enter your pledge
+              </div>
+              <div class="modal_pledge_menu_amount">
+                <i class="fas fa-dollar-sign"></i><input type="text" class="pledge_amount">
+                <button class="pledge_continue">Conitnue</button>
+              </div>
+            </div>`;
+    });
+});
+radioHeaderSelectors.forEach((e)=>{
+    e.addEventListener('click',(e2)=>{
+        let headerSection=e2.target.parentElement.parentElement.parentElement;
+        let headerSectionAllRadio=headerSection.parentElement.parentElement.parentElement.classList[0];
+        let headerSectionAllRadioDom=document.querySelectorAll(`.${headerSectionAllRadio} input[type="radio"]`);
+        let headertTextSection=headerSection.parentElement.parentElement.classList[1];        
+        let headerTextSectionDom=document.querySelector(`.${headertTextSection} .radio_menu`);
+        let headerTextSectionAllDom=document.querySelectorAll(`.${headerSectionAllRadio} .radio_menu`);
+        headerSectionAllRadioDom.forEach((e)=>{
+            e.setAttribute('checked',false);
+        });
+        headerSection.previousElementSibling.checked=true;
+        headerTextSectionAllDom.forEach((e)=>{
+            e.innerHTML=``;
+        });
+        headerTextSectionDom.innerHTML=`<div class="modal_pledge_menu">
               <div class="modal_text">
                 Enter your pledge
               </div>

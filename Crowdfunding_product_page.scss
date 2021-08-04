@@ -362,6 +362,10 @@ header {
         background-color: $normal-white;
         border: 1px solid $dark-gary-disabled;
       }
+      input[type="radio"]:checked:after {
+        background-color: $normal-white;
+        border: 1px solid $dark-gary-disabled;
+      }
       .radio_text_header_one,
       .number_left {
         color: $drak-gray;
