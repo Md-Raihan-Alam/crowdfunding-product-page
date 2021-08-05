@@ -439,3 +439,43 @@ header {
   pointer-events: auto !important;
   filter: grayscale(0%) !important;
 }
+.congrat_section {
+  @include widthHeight(100%, auto);
+  position: absolute;
+  top: 300px;
+  .congrat {
+    @include widthHeight(40%, auto);
+    margin: 0 auto;
+    background-color: $normal-white;
+    padding: 40px;
+    @include displayFlex(column, center, center);
+    border-radius: 10px;
+    &_header {
+      margin-top: 10px;
+      font-size: fontSizeSet(big);
+      font-weight: fontWeightSet(b-bolder);
+    }
+    &_desc {
+      margin-top: 10px;
+      text-align: center;
+      font-size: fontSizeSet(n-normal);
+      font-weight: fontWeightSet(l-light);
+      color: $drak-gray;
+    }
+    &_btn {
+      @include widthHeight(15%, 40px);
+      margin-top: 10px;
+      border-radius: 50px;
+      color: $normal-white;
+      font-size: fontSizeSet(n-normal);
+      font-weight: fontWeightSet(l-lighter);
+      border: none;
+      outline: none;
+      background-color: $primary-cyan-one;
+      cursor: pointer;
+      &:hover {
+        background-color: $primary-cyan-two;
+      }
+    }
+  }
+}
