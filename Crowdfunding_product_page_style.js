@@ -145,12 +145,8 @@ modalPledge.map((data)=>{
             </div>
     `;
 });
-modalShutterBtn.addEventListener('click',function(){
-    modalShutter.classList.remove('shut');
-    modalShutter.classList.add('hero_front');
-    heroBackground.classList.add('hero_side');
-    closeBtn.addEventListener('click',function(){
-        modalShutter.classList.add('shut');
+function shuttingDown(){
+     modalShutter.classList.add('shut');
         modalShutter.classList.remove('hero_front');
         heroBackground.classList.remove('hero_side');
         document.querySelectorAll('.radio_menu').forEach((e)=>{
@@ -162,7 +158,12 @@ modalShutterBtn.addEventListener('click',function(){
         document.querySelectorAll('.radio_section input[type="radio"]').forEach((e)=>{
             e.checked=false;
         });
-    });
+}
+modalShutterBtn.addEventListener('click',function(){
+    modalShutter.classList.remove('shut');
+    modalShutter.classList.add('hero_front');
+    heroBackground.classList.add('hero_side');
+    closeBtn.addEventListener('click',shuttingDown);
 });
 const radioSelectors=document.querySelectorAll('.radio_section input[type="radio"]');
 const radioHeaderSelectors=document.querySelectorAll('.radio_text_header_one');
@@ -212,4 +213,9 @@ radioHeaderSelectors.forEach((e)=>{
               </div>
             </div>`;
     });
+});
+const pledgeBtn=document.querySelector('.modal_pledge_start_form');
+pledgeBtn.addEventListener('submit',function(e){
+    e.preventDefault();
+    shuttingDown();
 });
