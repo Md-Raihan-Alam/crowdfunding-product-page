@@ -8,6 +8,10 @@
 body {
   background-color: $drak-gray-two;
 }
+.hero_side {
+  filter: grayscale(70%);
+  pointer-events: none;
+}
 header {
   @include widthHeight(100%, 250px);
   background-image: url(images/image-hero-desktop.jpg);
@@ -251,6 +255,7 @@ header {
 /*modal pledge*/
 .modal {
   @include widthHeight(100%, auto);
+  filter: grayscale(0%) !important;
   position: absolute;
   top: 100px;
   &_pledge {
@@ -262,7 +267,9 @@ header {
     &_svg {
       @include widthHeight(100%, auto);
       @include displayFlex(row, flex-end, flex-start);
-      cursor: pointer;
+      #close_svg {
+        cursor: pointer;
+      }
     }
     &_start {
       @include displayFlex(column, flex-start, flex-start);
@@ -427,4 +434,8 @@ header {
 }
 .shut {
   display: none !important;
+}
+.hero_front {
+  pointer-events: auto !important;
+  filter: grayscale(0%) !important;
 }

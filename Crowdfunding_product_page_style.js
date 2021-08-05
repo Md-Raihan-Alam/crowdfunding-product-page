@@ -81,6 +81,7 @@ const pledgeNode=document.querySelector('.pledge_offer');
 const menuNode=document.querySelector('.modal_pledge_radio');
 const modalShutterBtn=document.querySelector('.backer_btn');
 const modalShutter=document.querySelector('.modal');
+const heroBackground=document.querySelector('.hero');
 const bookSVG=document.querySelector('#svg_color');
 const bookFlag=document.querySelector('#bookflag');
 const bookCircle=document.querySelector('#bookcircle');
@@ -146,8 +147,12 @@ modalPledge.map((data)=>{
 });
 modalShutterBtn.addEventListener('click',function(){
     modalShutter.classList.remove('shut');
+    modalShutter.classList.add('hero_front');
+    heroBackground.classList.add('hero_side');
     closeBtn.addEventListener('click',function(){
         modalShutter.classList.add('shut');
+        modalShutter.classList.remove('hero_front');
+        heroBackground.classList.remove('hero_side');
         document.querySelectorAll('.radio_menu').forEach((e)=>{
             e.innerHTML='';
         });
