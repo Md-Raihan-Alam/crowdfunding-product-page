@@ -46,6 +46,8 @@ const modalPledge=[
         id:"one",
         header:"Pledge with no reward",
         subHeader:"",
+        min:0,
+        max:0,
         amount:"",
         text:"",
         desc:"Choose to support us without a reward if you simply believe in our project,As a backer, you will be signed up to recieve products updates via email."
@@ -54,6 +56,8 @@ const modalPledge=[
         id:"two",
         header:"Bamboo Stand",
         subHeader:"Pledge $25 or more",
+        min:25,
+        max:74,
         amount:"101",
         text:"left",
         desc:"You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you'll be added to a special Backer memeber list",
@@ -62,6 +66,8 @@ const modalPledge=[
         id:"three",
         header:"Black Edition Stand",
         subHeader:"Pledge &75 or more",
+        min:75,
+        max:199,
         amount:"64",
         text:"left",
         desc:"You get a Black Special Edition computer stand and a personal thank you. You'll be added to our Backer member list.Shipping is included",
@@ -70,6 +76,8 @@ const modalPledge=[
         id:"four",
         header:"Mahogany Special Edition",
         subHeader:"Pledge $200 or more",
+        min:200,
+        max:10000,
         amount:"0",
         text:"left",
         desc:"You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You'll be added to ur Backer member list. Shipping is included"
@@ -86,7 +94,7 @@ const bookSVG=document.querySelector('#svg_color');
 const bookFlag=document.querySelector('#bookflag');
 const bookCircle=document.querySelector('#bookcircle');
 const bookMarkerText=document.querySelector('.bookmark_text');
-let bookmarkUpdate=false;
+let bookmarkUpdate=true;
 bookFlag.setAttribute('fill','#B1B1B1');
 bookCircle.setAttribute('fill','#2F2F2F');
 bookMarkerText.innerText="Bookmark";
@@ -172,17 +180,25 @@ radioSelectors.forEach((e)=>{
     e.addEventListener('click',(e2)=>{
         let allClassesDom=e.parentElement.parentElement.parentElement.classList[0];
         let classDom=e2.target.parentElement.parentElement.classList;
+        console.log(classDom);
         let classPart=document.querySelector(`.${classDom[1]} .radio_menu`);
         let allClassesDomPart=document.querySelectorAll(`.${allClassesDom} .radio_menu`);
         allClassesDomPart.forEach((e)=>{
             e.innerHTML=``;
         });
+        let min,max;
+        modalPledge.filter((e)=>{
+                if(e.id==classDom[1]){
+                    min=`${e.min}`;
+                    max=`${e.max}`;
+                }
+            });
         classPart.innerHTML=`<div class="modal_pledge_menu">
               <div class="modal_text">
                 Enter your pledge
               </div>
               <div class="modal_pledge_menu_amount">
-                <i class="fas fa-dollar-sign"></i><input type="text" class="pledge_amount">
+                <i class="fas fa-dollar-sign"></i><input type="number" min=${min} max=${max} class="pledge_amount">
                 <button class="pledge_continue">Conitnue</button>
               </div>
             </div>`;
@@ -203,12 +219,19 @@ radioHeaderSelectors.forEach((e)=>{
         headerTextSectionAllDom.forEach((e)=>{
             e.innerHTML=``;
         });
+         let min,max;
+        modalPledge.filter((e)=>{
+                if(e.id==headertTextSection){
+                    min=`${e.min}`;
+                    max=`${e.max}`;
+                }
+            });
         headerTextSectionDom.innerHTML=`<div class="modal_pledge_menu">
               <div class="modal_text">
                 Enter your pledge
               </div>
               <div class="modal_pledge_menu_amount">
-                <i class="fas fa-dollar-sign"></i><input type="text" class="pledge_amount">
+                <i class="fas fa-dollar-sign"></i><input type="number" min=${min} max=${max} class="pledge_amount">
                 <button class="pledge_continue">Conitnue</button>
               </div>
             </div>`;
@@ -218,4 +241,8 @@ const pledgeBtn=document.querySelector('.modal_pledge_start_form');
 pledgeBtn.addEventListener('submit',function(e){
     e.preventDefault();
     shuttingDown();
+    document.querySelector('.congrat_section').classList.remove('shut');
+    document.querySelector('.congrat_btn').addEventListener('click',function(){
+    document.querySelector('.congrat_section').classList.add('shut');
+});
 });
