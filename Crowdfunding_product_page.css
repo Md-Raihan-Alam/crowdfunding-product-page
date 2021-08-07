@@ -48,8 +48,98 @@ header {
 }
 
 .info .info_menu .nav_link {
+  display: inline-block;
   color: white;
   margin: 0px 10px;
+}
+
+.info .info_menu #menu_bar {
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .info .info_menu .nav_link {
+    display: none;
+  }
+  .info .info_menu #menu_bar {
+    display: block;
+  }
+}
+
+.media_menu_section {
+  display: none;
+  background-color: white;
+  width: 80%;
+  height: 200px;
+  -webkit-transform: translateY(-500px);
+          transform: translateY(-500px);
+  position: absolute;
+  z-index: 1111;
+  left: 10%;
+  border-radius: 10px;
+  top: 25%;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 500px) {
+  .media_menu_section {
+    display: block;
+  }
+}
+
+.media_menu_section .info_menu_media {
+  width: 100%;
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-radius: inherit;
+}
+
+.media_menu_section .info_menu_media .nav_link_media {
+  padding-left: 20px;
+  width: inherit;
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-bottom: 1px solid rgba(122, 122, 122, 0.281);
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.media_menu_section .info_menu_media .three {
+  border-bottom: none;
+}
+
+.media {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
 }
 
 .upper {

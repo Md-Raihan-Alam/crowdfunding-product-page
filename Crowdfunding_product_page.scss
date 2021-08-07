@@ -26,10 +26,60 @@ header {
     font-size: fontSizeSet(logoSize);
     font-weight: fontWeightSet(bold);
   }
-  #{&}_menu .nav_link {
-    color: $normal-white;
-    margin: 0px 10px;
+  #{&}_menu {
+    .nav_link {
+      display: inline-block;
+      color: $normal-white;
+      margin: 0px 10px;
+    }
+    #menu_bar {
+      display: none;
+      cursor: pointer;
+    }
+    @include mobileDesignTwo {
+      .nav_link {
+        display: none;
+      }
+      #menu_bar {
+        display: block;
+      }
+    }
   }
+}
+.media_menu_section {
+  display: none;
+  @include mobileDesignTwo {
+    display: block;
+  }
+  background-color: $normal-white;
+  @include widthHeight(80%, 200px);
+  transform: translateY(-500px);
+  position: absolute;
+  z-index: 1111;
+  left: 10%;
+  border-radius: 10px;
+  top: 25%;
+  .info_menu_media {
+    @include widthHeight(100%, inherit);
+    @include displayFlex(column, space-evenly, flex-start);
+    border-radius: inherit;
+    .nav_link_media {
+      padding-left: 20px;
+      @include widthHeight(inherit, inherit);
+      @include displayFlex(column, space-evenly, flex-start);
+      border-bottom: 1px solid $dark-gary-disabled;
+      color: $normal-black;
+      font-size: fontSizeSet(logoSize);
+      font-weight: fontWeightSet(n-normal);
+    }
+    .three {
+      border-bottom: none;
+    }
+  }
+  transition: transform 0.5s ease-in-out;
+}
+.media {
+  transform: translateY(0px);
 }
 .upper {
   @include widthHeight(100%, auto);

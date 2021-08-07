@@ -90,11 +90,14 @@ const menuNode=document.querySelector('.modal_pledge_radio');
 const modalShutterBtn=document.querySelector('.backer_btn');
 const modalShutter=document.querySelector('.modal');
 const heroBackground=document.querySelector('.hero');
+const menuBtn=document.querySelector('#menu_bar');
+const menuSection=document.querySelector('.media_menu_section');
 const bookSVG=document.querySelector('#svg_color');
 const bookFlag=document.querySelector('#bookflag');
 const bookCircle=document.querySelector('#bookcircle');
 const bookMarkerText=document.querySelector('.bookmark_text');
 let bookmarkUpdate=true;
+let menuBtnUpdate=true;
 bookFlag.setAttribute('fill','#B1B1B1');
 bookCircle.setAttribute('fill','#2F2F2F');
 bookMarkerText.innerText="Bookmark";
@@ -122,6 +125,11 @@ pledgeInfo.map((data)=>{
           </div>
     </div>
     `;
+});
+menuBtn.addEventListener('click',function(){
+    menuBtnUpdate ? menuBtn.src='images/icon-close-menu.svg':menuBtn.src='images/icon-hamburger.svg';
+        menuBtnUpdate ? menuSection.classList.add('media'):menuSection.classList.remove('media');
+    menuBtnUpdate ? menuBtnUpdate=false: menuBtnUpdate=true;
 });
 bookMarkerText.addEventListener('click',markerUpdate);
 bookSVG.addEventListener('click',markerUpdate);
