@@ -106,6 +106,7 @@ backerInfo.map((data)=>{
     <div class="backer_data ${data.id}">
         <div class="bf_amount">${data.amount}</div>
         <div class="bf_desc">${data.amountDesc}</div>
+        <div class="bf_border_bt"></div>
     </div>
     `;
 });

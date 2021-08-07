@@ -106,25 +106,36 @@ header {
   #{&}_header_one {
     font-size: fontSizeSet(big);
     font-weight: fontWeightSet(b-bolder);
+    text-align: justify;
+    @include mobileDesignTwo {
+      @include widthHeight(60%, auto);
+      text-align: center;
+    }
   }
   #{&}_header_two {
     margin-top: 10px;
     font-size: fontSizeSet(s-small);
     color: $drak-gray;
+    @include mobileDesignTwo {
+      @include widthHeight(70%, auto);
+      text-align: center;
+    }
   }
   #{&}_finisher {
     padding-bottom: 50px;
     margin-top: 20px;
     .upper_finisher_btn {
       @include widthHeight(70%, auto);
-      @include mobileDesignOne {
-        @include widthHeight(90%, auto);
-      }
       margin: 0 auto;
       @include displayFlex(row, space-around, center);
+      @include mobileDesignOne {
+        @include widthHeight(90%, auto);
+        @include displayFlex(row, none, none);
+      }
       .backer_btn {
-        @include widthHeight(120px, 50px);
+        @include widthHeight(60%, 50px);
         border-radius: 50px;
+        padding: 0px 20px;
         cursor: pointer;
         border: none;
         outline: none;
@@ -136,6 +147,9 @@ header {
         #svg_color {
           position: relative;
           left: 20px;
+          @include mobileDesignTwo {
+            left: 0px;
+          }
         }
         @include displayFlex(row, center, center);
         .bookmark_text {
@@ -145,6 +159,9 @@ header {
           @include widthHeight(150px, 55px);
           border-radius: 0px 50px 50px 0px;
           @include displayFlex(row, center, center);
+          @include mobileDesignTwo {
+            display: none;
+          }
         }
         #svg_color,
         .bookmark_text:hover {
@@ -171,18 +188,44 @@ header {
     .backer_section {
       margin-bottom: 20px;
       @include displayFlex(row, space-evenly, center);
+      @include mobileDesignTwo {
+        @include displayFlex(column, flex-start, center);
+      }
+      .bf_border_bt {
+        display: none;
+        @include mobileDesignTwo {
+          display: block;
+          @include widthHeight(40px, 2px);
+          background-color: $drak-gray-two;
+        }
+      }
       .one,
       .two {
         padding-right: 70px;
         border-right: 2px solid $drak-gray-two;
+        @include mobileDesignTwo {
+          @include widthHeight(100%, auto);
+          @include displayFlex(column, center, center);
+          padding-right: 0px;
+          border-right: none;
+          padding-bottom: 20px;
+          margin-bottom: 10px;
+        }
       }
       .bf_amount {
+        text-align: center;
         font-size: fontSizeSet(big);
         font-weight: fontWeightSet(b-bolder);
-        margin-bottom: 10px;
       }
       .bf_desc {
+        text-align: center;
         color: $drak-gray;
+        padding-bottom: 10px;
+      }
+      .three {
+        .bf_border_bt {
+          display: none !important;
+        }
       }
     }
     .progressive_section {
@@ -236,6 +279,9 @@ header {
     &_offer {
       .pledge_header {
         @include displayFlex(row, space-between, center);
+        @include mobileDesignTwo {
+          @include displayFlex(column, flex-start, flex-start);
+        }
         .pledge_hr_one,
         .pledge_hr_two {
           font-size: fontSizeSet(logoSize);
@@ -245,6 +291,11 @@ header {
           font-size: fontSizeSet(logoSize);
           font-weight: fontWeightSet(l-bold);
           color: $drak-gray;
+        }
+        @include mobileDesignTwo {
+          [class^="pledge_link_"] {
+            padding-top: 10px;
+          }
         }
         .pledge_link_one,
         .pledge_link_two {
@@ -270,6 +321,9 @@ header {
       .pledge_btn_sec {
         padding-top: 20px;
         @include displayFlex(row, space-between, center);
+        @include mobileDesignTwo {
+          @include displayFlex(column, flex-start, flex-start);
+        }
         .pledge_number_one,
         .pledge_number_two,
         .pledge_number_three {
@@ -308,6 +362,11 @@ header {
           cursor: default;
           &:hover {
             background-color: $dark-gary-disabled;
+          }
+        }
+        @include mobileDesignTwo {
+          [class^="pledge_reward"] {
+            margin-top: 20px;
           }
         }
       }

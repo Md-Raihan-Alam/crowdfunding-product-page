@@ -202,12 +202,29 @@ header {
 .upper .upper_header_one {
   font-size: 23px;
   font-weight: bolder;
+  text-align: justify;
+}
+
+@media screen and (max-width: 500px) {
+  .upper .upper_header_one {
+    width: 60%;
+    height: auto;
+    text-align: center;
+  }
 }
 
 .upper .upper_header_two {
   margin-top: 10px;
   font-size: 14px;
   color: #7a7a7a;
+}
+
+@media screen and (max-width: 500px) {
+  .upper .upper_header_two {
+    width: 70%;
+    height: auto;
+    text-align: center;
+  }
 }
 
 .upper .upper_finisher {
@@ -237,13 +254,27 @@ header {
   .upper .upper_finisher .upper_finisher_btn {
     width: 90%;
     height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: none;
+        -ms-flex-pack: none;
+            justify-content: none;
+    -webkit-box-align: none;
+        -ms-flex-align: none;
+            align-items: none;
   }
 }
 
 .upper .upper_finisher .upper_finisher_btn .backer_btn {
-  width: 120px;
+  width: 60%;
   height: 50px;
   border-radius: 50px;
+  padding: 0px 20px;
   cursor: pointer;
   border: none;
   outline: none;
@@ -273,6 +304,12 @@ header {
   left: 20px;
 }
 
+@media screen and (max-width: 500px) {
+  .upper .upper_finisher .upper_finisher_btn .upper_finisher_bookmark #svg_color {
+    left: 0px;
+  }
+}
+
 .upper .upper_finisher .upper_finisher_btn .upper_finisher_bookmark .bookmark_text {
   color: #7a7a7a;
   font-weight: bolder;
@@ -293,6 +330,12 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+  .upper .upper_finisher .upper_finisher_btn .upper_finisher_bookmark .bookmark_text {
+    display: none;
+  }
 }
 
 .upper .upper_finisher .upper_finisher_btn .upper_finisher_bookmark #svg_color,
@@ -341,20 +384,82 @@ header {
           align-items: center;
 }
 
+@media screen and (max-width: 500px) {
+  .backer .backer_info .backer_section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.backer .backer_info .backer_section .bf_border_bt {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .backer .backer_info .backer_section .bf_border_bt {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: #eae6e6;
+  }
+}
+
 .backer .backer_info .backer_section .one,
 .backer .backer_info .backer_section .two {
   padding-right: 70px;
   border-right: 2px solid #eae6e6;
 }
 
+@media screen and (max-width: 500px) {
+  .backer .backer_info .backer_section .one,
+  .backer .backer_info .backer_section .two {
+    width: 100%;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-right: 0px;
+    border-right: none;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+  }
+}
+
 .backer .backer_info .backer_section .bf_amount {
+  text-align: center;
   font-size: 23px;
   font-weight: bolder;
-  margin-bottom: 10px;
 }
 
 .backer .backer_info .backer_section .bf_desc {
+  text-align: center;
   color: #7a7a7a;
+  padding-bottom: 10px;
+}
+
+.backer .backer_info .backer_section .three .bf_border_bt {
+  display: none !important;
 }
 
 .backer .backer_info .progressive_section {
@@ -437,6 +542,24 @@ header {
           align-items: center;
 }
 
+@media screen and (max-width: 500px) {
+  .about .pledge_offer .pledge_header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
 .about .pledge_offer .pledge_header .pledge_hr_one,
 .about .pledge_offer .pledge_header .pledge_hr_two {
   font-size: 20px;
@@ -447,6 +570,12 @@ header {
   font-size: 20px;
   font-weight: 700;
   color: #7a7a7a;
+}
+
+@media screen and (max-width: 500px) {
+  .about .pledge_offer .pledge_header [class^="pledge_link_"] {
+    padding-top: 10px;
+  }
 }
 
 .about .pledge_offer .pledge_header .pledge_link_one,
@@ -488,6 +617,24 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+  .about .pledge_offer .pledge_btn_sec {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
 }
 
 .about .pledge_offer .pledge_btn_sec .pledge_number_one,
@@ -539,6 +686,12 @@ header {
 
 .about .pledge_offer .pledge_btn_sec .pledge_reward_three:hover {
   background-color: rgba(122, 122, 122, 0.281);
+}
+
+@media screen and (max-width: 500px) {
+  .about .pledge_offer .pledge_btn_sec [class^="pledge_reward"] {
+    margin-top: 20px;
+  }
 }
 
 /*modal pledge*/
