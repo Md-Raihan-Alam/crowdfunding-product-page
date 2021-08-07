@@ -34,3 +34,8 @@ $fontSize: (
   justify-content: $justifyContent;
   align-items: $alignItems;
 }
+@mixin mobileDesignOne {
+  @media screen and (max-width: 1000px) {
+    @content;
+  }
+}
