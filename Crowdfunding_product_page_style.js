@@ -158,6 +158,7 @@ modalPledge.map((data)=>{
                 </div>
                 <div class="radio_desc">${data.desc}
                 </div>
+                <div class="number_left2">${data.amount}<span class="text">${data.text}</span></div>
               </div>
             </div>
               <div class="radio_menu"></div>
