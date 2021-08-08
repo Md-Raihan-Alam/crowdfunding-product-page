@@ -166,7 +166,7 @@ modalPledge.map((data)=>{
     `;
 });
 function shuttingDown(){
-     modalShutter.classList.add('shut');
+        modalShutter.classList.add('shut');
         modalShutter.classList.remove('hero_front');
         heroBackground.classList.remove('hero_side');
         document.querySelectorAll('.radio_menu').forEach((e)=>{
@@ -253,8 +253,10 @@ const pledgeBtn=document.querySelector('.modal_pledge_start_form');
 pledgeBtn.addEventListener('submit',function(e){
     e.preventDefault();
     shuttingDown();
+    heroBackground.classList.add('hero_side');
     document.querySelector('.congrat_section').classList.remove('shut');
     document.querySelector('.congrat_btn').addEventListener('click',function(){
+    heroBackground.classList.remove('hero_side');
     document.querySelector('.congrat_section').classList.add('shut');
 });
 });
