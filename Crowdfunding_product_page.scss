@@ -568,12 +568,12 @@ header {
         position: relative;
         i {
           position: absolute;
-          left: 15px;
-          top: 23px;
-          @include mobileDesignTwo {
-            top: 22px;
-            left: 55px;
-          }
+          left: 13%;
+          top: 37.5%;
+          // @include mobileDesignTwo {
+          //   top: 22px;
+          //   left: 55px;
+          // }
           color: $drak-gray;
         }
         .pledge_amount {
@@ -597,6 +597,12 @@ header {
             background-color: $primary-cyan-two;
           }
         }
+        @include mobileDesignTwo {
+          .pledge_amount,
+          .pledge_continue {
+            @include widthHeight(80px, 60px);
+          }
+        }
       }
     }
   }
@@ -614,6 +620,9 @@ header {
   top: 300px;
   .congrat {
     @include widthHeight(40%, auto);
+    @include mobileDesignTwo {
+      @include widthHeight(70%, auto);
+    }
     margin: 0 auto;
     background-color: $normal-white;
     padding: 40px;
