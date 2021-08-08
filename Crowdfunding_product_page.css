@@ -10,6 +10,12 @@ body {
   background-color: #eae6e6;
 }
 
+#menu_bar {
+  pointer-events: auto !important;
+  -webkit-filter: grayscale(0) !important;
+          filter: grayscale(0) !important;
+}
+
 .hero_side {
   -webkit-filter: grayscale(70%);
           filter: grayscale(70%);
@@ -72,8 +78,8 @@ header {
   background-color: white;
   width: 80%;
   height: 200px;
-  -webkit-transform: translateY(-500px);
-          transform: translateY(-500px);
+  -webkit-transform: translateY(-1000px);
+          transform: translateY(-1000px);
   position: absolute;
   z-index: 1111;
   left: 10%;
@@ -88,6 +94,8 @@ header {
 @media screen and (max-width: 500px) {
   .media_menu_section {
     display: block;
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
   }
 }
 
@@ -271,7 +279,7 @@ header {
 }
 
 .upper .upper_finisher .upper_finisher_btn .backer_btn {
-  width: 60%;
+  width: 150px;
   height: 50px;
   border-radius: 50px;
   padding: 0px 20px;
@@ -700,6 +708,7 @@ header {
   height: auto;
   -webkit-filter: grayscale(0%) !important;
           filter: grayscale(0%) !important;
+  z-index: 1111;
   position: absolute;
   top: 100px;
 }

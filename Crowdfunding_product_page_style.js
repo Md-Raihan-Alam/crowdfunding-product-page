@@ -129,7 +129,9 @@ pledgeInfo.map((data)=>{
 });
 menuBtn.addEventListener('click',function(){
     menuBtnUpdate ? menuBtn.src='images/icon-close-menu.svg':menuBtn.src='images/icon-hamburger.svg';
-        menuBtnUpdate ? menuSection.classList.add('media'):menuSection.classList.remove('media');
+    menuBtnUpdate ? menuSection.classList.add('media'):menuSection.classList.remove('media');
+    menuBtnUpdate ? modalShutter.classList.add('hero_front'):modalShutter.classList.remove('hero_front');
+    menuBtnUpdate ? heroBackground.classList.add('hero_side'):heroBackground.classList.remove('hero_side');
     menuBtnUpdate ? menuBtnUpdate=false: menuBtnUpdate=true;
 });
 bookMarkerText.addEventListener('click',markerUpdate);

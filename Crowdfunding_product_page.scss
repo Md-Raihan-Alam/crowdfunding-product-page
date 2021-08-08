@@ -8,6 +8,10 @@
 body {
   background-color: $drak-gray-two;
 }
+#menu_bar {
+  pointer-events: auto !important;
+  filter: grayscale(0) !important;
+}
 .hero_side {
   filter: grayscale(70%);
   pointer-events: none;
@@ -50,10 +54,11 @@ header {
   display: none;
   @include mobileDesignTwo {
     display: block;
+    transform: translateY(-1000px);
   }
   background-color: $normal-white;
   @include widthHeight(80%, 200px);
-  transform: translateY(-500px);
+  transform: translateY(-1000px);
   position: absolute;
   z-index: 1111;
   left: 10%;
@@ -133,7 +138,7 @@ header {
         @include displayFlex(row, none, none);
       }
       .backer_btn {
-        @include widthHeight(60%, 50px);
+        @include widthHeight(150px, 50px);
         border-radius: 50px;
         padding: 0px 20px;
         cursor: pointer;
@@ -377,6 +382,7 @@ header {
 .modal {
   @include widthHeight(100%, auto);
   filter: grayscale(0%) !important;
+  z-index: 1111;
   position: absolute;
   top: 100px;
   &_pledge {
