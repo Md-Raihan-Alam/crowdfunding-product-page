@@ -551,15 +551,29 @@ header {
       @include widthHeight(100%, auto);
       padding: 0px 20px 20px 20px;
       @include displayFlex(row, space-between, center);
+      @include mobileDesignTwo {
+        @include displayFlex(column, center, center);
+      }
       .modal_text {
         color: $drak-gray;
+        @include mobileDesignTwo {
+          margin-bottom: 20px;
+        }
       }
       &_amount {
+        @include mobileDesignTwo {
+          @include widthHeight(100%, auto);
+          @include displayFlex(row, space-evenly, center);
+        }
         position: relative;
         i {
           position: absolute;
           left: 15px;
           top: 23px;
+          @include mobileDesignTwo {
+            top: 22px;
+            left: 55px;
+          }
           color: $drak-gray;
         }
         .pledge_amount {
