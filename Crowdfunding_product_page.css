@@ -722,6 +722,13 @@ header {
   background-color: white;
 }
 
+@media screen and (max-width: 500px) {
+  .modal_pledge {
+    width: 80%;
+    height: auto;
+  }
+}
+
 .modal_pledge_svg {
   width: 100%;
   height: auto;
@@ -887,6 +894,24 @@ header {
           align-items: flex-start;
 }
 
+@media screen and (max-width: 500px) {
+  .modal .modal_pledge_radio .radio_section .radio_section_info .radio_text_header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
 .modal .modal_pledge_radio .radio_section .radio_section_info .radio_text_header_one {
   font-size: 20px;
   font-weight: 700;
@@ -905,9 +930,21 @@ header {
   font-weight: 700;
 }
 
+@media screen and (max-width: 500px) {
+  .modal .modal_pledge_radio .radio_section .radio_section_info .radio_text_header_two {
+    margin-top: 10px;
+  }
+}
+
 .modal .modal_pledge_radio .radio_section .radio_section_info .radio_text .number_left {
   font-size: 16px;
   font-weight: bolder;
+}
+
+@media screen and (max-width: 500px) {
+  .modal .modal_pledge_radio .radio_section .radio_section_info .radio_text .number_left {
+    display: none;
+  }
 }
 
 .modal .modal_pledge_radio .radio_section .radio_section_info .radio_text .number_left .text {
@@ -919,6 +956,26 @@ header {
 
 .modal .modal_pledge_radio .radio_section .radio_section_info .radio_desc {
   color: #7a7a7a;
+}
+
+.modal .modal_pledge_radio .radio_section .radio_section_info .number_left2 {
+  display: none;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 500px) {
+  .modal .modal_pledge_radio .radio_section .radio_section_info .number_left2 {
+    display: block;
+  }
+}
+
+.modal .modal_pledge_radio .radio_section .radio_section_info .number_left2 .text {
+  font-size: 14px;
+  color: #7a7a7a;
+  position: relative;
+  left: 5px;
 }
 
 .modal .modal_pledge_radio .four {

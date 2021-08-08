@@ -389,6 +389,9 @@ header {
     border-radius: 10px;
     padding: 20px;
     @include widthHeight(50%, auto);
+    @include mobileDesignTwo {
+      @include widthHeight(80%, auto);
+    }
     margin: 0 auto;
     background-color: $normal-white;
     &_svg {
@@ -454,6 +457,9 @@ header {
           @include displayFlex(row, space-between, flex-start);
           &_header {
             @include displayFlex(row, center, flex-start);
+            @include mobileDesignTwo {
+              @include displayFlex(column, flex-start, flex-start);
+            }
             &_one {
               font-size: fontSizeSet(logoSize);
               font-weight: fontWeightSet(l-bold);
@@ -466,11 +472,17 @@ header {
             }
             &_two {
               margin-top: -2px;
+              @include mobileDesignTwo {
+                margin-top: 10px;
+              }
               color: $primary-cyan-one;
               font-weight: fontWeightSet(l-bold);
             }
           }
           .number_left {
+            @include mobileDesignTwo {
+              display: none;
+            }
             font-size: fontSizeSet(n-normal);
             font-weight: fontWeightSet(b-bolder);
             .text {
@@ -484,6 +496,22 @@ header {
         }
         .radio_desc {
           color: $drak-gray;
+        }
+        .number_left2 {
+          display: none;
+          @include mobileDesignTwo {
+            display: block;
+          }
+          margin-top: 10px;
+          font-size: fontSizeSet(n-normal);
+          font-weight: fontWeightSet(b-bolder);
+          .text {
+            font-size: fontSizeSet(s-small);
+            font-weight: fontWeightSet(l-lighter);
+            color: $drak-gray;
+            position: relative;
+            left: 5px;
+          }
         }
       }
     }
