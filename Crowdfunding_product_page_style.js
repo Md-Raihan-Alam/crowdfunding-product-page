@@ -219,9 +219,13 @@ radioSelectors.forEach((e)=>{
 radioHeaderSelectors.forEach((e)=>{
     e.addEventListener('click',(e2)=>{
         let headerSection=e2.target.parentElement.parentElement.parentElement;
+        let headerSectionBorder=headerSection.parentElement.parentElement;
         let headerSectionAllRadio=headerSection.parentElement.parentElement.parentElement.classList[0];
+        // console.log(headerSectionBorder);
+        let headerSectionAllBorder=document.querySelectorAll(`.modal_pledge_radio .radio_section`);
+        // console.log(headerSectionAllBorder);
         let headerSectionAllRadioDom=document.querySelectorAll(`.${headerSectionAllRadio} input[type="radio"]`);
-        let headertTextSection=headerSection.parentElement.parentElement.classList[1];        
+        let headertTextSection=headerSection.parentElement.parentElement.classList[1];    
         let headerTextSectionDom=document.querySelector(`.${headertTextSection} .radio_menu`);
         let headerTextSectionAllDom=document.querySelectorAll(`.${headerSectionAllRadio} .radio_menu`);
         headerSectionAllRadioDom.forEach((e)=>{
@@ -238,7 +242,21 @@ radioHeaderSelectors.forEach((e)=>{
                     max=`${e.max}`;
                 }
             });
-        headerTextSectionDom.innerHTML=`<div class="modal_pledge_menu">
+            headerSectionAllBorder.forEach((e)=>{
+                e.style.border=``;
+            });
+           headerSectionBorder.style.border="2px solid hsl(176, 50%, 47%)"; 
+        if(headertTextSection=='one'){
+            headerTextSectionDom.innerHTML=``;
+            shuttingDown();
+    heroBackground.classList.add('hero_side');
+    document.querySelector('.congrat_section').classList.remove('shut');
+    document.querySelector('.congrat_btn').addEventListener('click',function(){
+    heroBackground.classList.remove('hero_side');
+    document.querySelector('.congrat_section').classList.add('shut');
+});
+        }else{
+            headerTextSectionDom.innerHTML=`<div class="modal_pledge_menu">
               <div class="modal_text">
                 Enter your pledge
               </div>
@@ -247,6 +265,7 @@ radioHeaderSelectors.forEach((e)=>{
                 <button class="pledge_continue">Conitnue</button>
               </div>
             </div>`;
+        }
     });
 });
 const pledgeBtn=document.querySelector('.modal_pledge_start_form');

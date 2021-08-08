@@ -417,6 +417,11 @@ header {
     @include displayFlex(column, flex-start, flex-start);
     .radio_section {
       @include displayFlex(column, flex-start, center);
+      // border: 2px solid $primary-cyan-one;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      outline: none;
       .radio {
         border: 1px solid $dark-gary-disabled;
         border-radius: 10px;
